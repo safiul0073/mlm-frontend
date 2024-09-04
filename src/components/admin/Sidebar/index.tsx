@@ -1,5 +1,5 @@
 const Sidebar = (props: any) => {
-	const { showSidebar, setShowSidebar } = props;
+	const { showSidebar } = props;
 	return (
 		<>
 			<aside
