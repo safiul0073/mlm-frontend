@@ -1,4 +1,4 @@
-const Sidebar = (props) => {
+const Sidebar = (props:any) => {
 	const { showSidebar, setShowSidebar } = props;
 	return (
 		<>
