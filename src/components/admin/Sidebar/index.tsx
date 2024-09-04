@@ -1,4 +1,4 @@
-const Sidebar = (props:any) => {
+const Sidebar = (props: any) => {
 	const { showSidebar, setShowSidebar } = props;
 	return (
 		<>
@@ -106,84 +106,108 @@ const Sidebar = (props:any) => {
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								true ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								true
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
 						<a
 							href="#"
 							className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-								false ? 'bg-[#535a94] !text-white' : 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+								false
+									? 'bg-[#535a94] !text-white'
+									: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
 							} inline-flex items-center`}>
 							Dashboard
 						</a>
