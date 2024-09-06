@@ -120,7 +120,9 @@ const Dashboard = () => {
 			</div>
 			<div className="grid grid-cols-auto-56 gap-4">
 				{[...Array(16)].map((i: any) => (
-					<div className="px-4 py-5 flex items-start gap-3 rounded-lg overflow-hidden bg-[#535a94] border-2 border-[#a98f65] relative after:absolute after:top-0 after:right-0 after:-translate-y-1/3 after:translate-x-1/3 after:h-16 after:aspect-square after:rounded-full after:bg-[#a98f65]">
+					<div
+						className="px-4 py-5 flex items-start gap-3 rounded-lg overflow-hidden bg-[#535a94] border-2 border-[#a98f65] relative after:absolute after:top-0 after:right-0 after:-translate-y-1/3 after:translate-x-1/3 after:h-16 after:aspect-square after:rounded-full after:bg-[#a98f65]"
+						key={i}>
 						<div className="bg-white text-[#535a94] h-10 aspect-square shrink-0 rounded-full inline-flex items-center justify-center">
 							<GiftOutlined className="text-xl" />
 						</div>

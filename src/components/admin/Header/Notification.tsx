@@ -37,10 +37,11 @@ const Notification = () => {
 						Notifications
 					</div>
 					<div className="divide-y divide-slate-200 dark:divide-slate-600">
-						{[...Array(4)].map((i: any) => (
+						{[...Array(4)].map((i: any, index: number) => (
 							<Link
 								href="/user/notifications/1234"
-								className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-[#123f57]">
+								className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-[#123f57]"
+								key={index}>
 								<div className="flex-shrink-0">
 									<Image
 										src="/aa.png"

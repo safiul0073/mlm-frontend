@@ -18,7 +18,7 @@ import {
 	TransactionOutlined,
 	UsergroupAddOutlined,
 	WalletFilled,
-	WalletOutlined
+	WalletOutlined,
 } from '@ant-design/icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -163,6 +163,7 @@ const Sidebar = (props: any) => {
 						{navList?.map((nav) => (
 							<Link
 								href={nav?.slug}
+								key={nav?.slug}
 								className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
 									pathName.endsWith(nav?.slug)
 										? '!bg-[#535a94] !text-white'
