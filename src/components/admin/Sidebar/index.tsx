@@ -1,10 +1,17 @@
+import { useProviderContext } from '@/components/Context';
+import {
+	FileAddOutlined,
+	FileDoneOutlined,
+	MoneyCollectFilled,
+	WalletFilled,
+} from '@ant-design/icons';
 const Sidebar = (props: any) => {
-	const { showSidebar } = props;
+	const { isHamburgerOpen, setIsHamburgerOpen } = useProviderContext();
 	return (
 		<>
 			<aside
 				className={`fixed top-[4.5rem] left-0 z-20 flex flex-col flex-shrink-0 h-full font-normal transition-all ease-in-out duration-300 ${
-					showSidebar
+					isHamburgerOpen
 						? 'w-96 visible opacity-100'
 						: 'w-0 invisible opacity-0'
 				}`}>
@@ -20,69 +27,14 @@ const Sidebar = (props: any) => {
 							<div className="flex flex-col gap-2 px-0.5">
 								<div className="flex items-center text-sm font-bold">
 									<div className="flex items-center gap-1.5">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="18"
-											height="18"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											data-lucide="wallet"
-											icon-name="wallet"
-											className="lucide lucide-wallet">
-											<path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
-											<path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
-											<path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
-										</svg>
+										<WalletFilled className="text-base" />
 										Main Wallet
 									</div>
 									<div className="ml-auto">$0</div>
 								</div>
 								<div className="flex items-center text-sm font-bold">
 									<div className="flex items-center gap-1.5">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="18"
-											height="18"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											data-lucide="landmark"
-											icon-name="landmark"
-											className="lucide lucide-landmark">
-											<line
-												x1="3"
-												x2="21"
-												y1="22"
-												y2="22"></line>
-											<line
-												x1="6"
-												x2="6"
-												y1="18"
-												y2="11"></line>
-											<line
-												x1="10"
-												x2="10"
-												y1="18"
-												y2="11"></line>
-											<line
-												x1="14"
-												x2="14"
-												y1="18"
-												y2="11"></line>
-											<line
-												x1="18"
-												x2="18"
-												y1="18"
-												y2="11"></line>
-											<polygon points="12 2 20 7 4 7"></polygon>
-										</svg>
+										<MoneyCollectFilled className="text-base" />
 										Profit Wallet
 									</div>
 									<div className="ml-auto">$3</div>
@@ -92,12 +44,14 @@ const Sidebar = (props: any) => {
 						<div className="grid grid-cols-2 gap-2">
 							<a
 								href="#"
-								className="bg-[#5364f1] hover:bg-[#e52e71] inline-flex items-center justify-center h-11 rounded text-white text-base font-medium">
+								className="bg-[#5364f1] hover:bg-[#e52e71] inline-flex items-center gap-2 justify-center h-11 rounded text-white text-base font-medium">
+								<FileAddOutlined className="text-base" />
 								Deposit
 							</a>
 							<a
 								href="#"
-								className="bg-[#2a9d8f] hover:bg-[#e52e71] inline-flex items-center justify-center h-11 rounded text-white text-base font-medium">
+								className="bg-[#2a9d8f] hover:bg-[#e52e71] inline-flex items-center gap-2 justify-center h-11 rounded text-white text-base font-medium">
+								<FileDoneOutlined className="text-base" />
 								Invest Now
 							</a>
 						</div>

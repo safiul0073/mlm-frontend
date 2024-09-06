@@ -1,8 +1,10 @@
 import '@/styles/style.scss';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Sofia_Sans } from 'next/font/google';
+import Providers from './providers';
 
-const inter = Inter({ subsets: ['latin'] });
+const sofia_sans = Sofia_Sans({ subsets: ['latin'], variable: '--font-sofia' });
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -16,8 +18,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${inter.className} bg-gray-50 dark:bg-[#032836] h-full min-h-screen flex flex-col`}>
-				{children}
+			<body
+				suppressHydrationWarning={true}
+				className={`${sofia_sans.variable} bg-gray-50 dark:bg-[#032836] h-full min-h-screen flex flex-col font-sofia`}>
+				<AntdRegistry>
+					<Providers>{children}</Providers>
+				</AntdRegistry>
 			</body>
 		</html>
 	);
