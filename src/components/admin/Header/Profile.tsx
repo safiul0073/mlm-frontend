@@ -1,4 +1,12 @@
 'use client';
+import {
+	DashboardOutlined,
+	LogoutOutlined,
+	PaperClipOutlined,
+	SettingOutlined,
+} from '@ant-design/icons';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 
@@ -14,12 +22,14 @@ const Profile = () => {
 					onClick={() => {
 						setShowProfileDropdown((state) => !state);
 					}}
-					className="flex text-sm bg-gray-800 rounded-full ">
+					className="flex text-sm bg-gray-800 rounded-full border border-gray-200 dark:border-[#535a94]/80">
 					<span className="sr-only">Open user menu</span>
-					<img
-						className="w-8 h-8 rounded-full"
-						src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-						alt="user photo"
+					<Image
+						src="/aa.png"
+						height="50"
+						width="50"
+						className="w-10 h-10 rounded-full"
+						alt="Jese image"
 					/>
 				</button>
 
@@ -52,36 +62,37 @@ const Profile = () => {
 						className="py-1"
 						role="none">
 						<li>
-							<a
-								href="#"
-								className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#123f57]"
+							<Link
+								href="/dashboard"
+								className="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#123f57]"
 								role="menuitem">
+								<DashboardOutlined />
 								Dashboard
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a
-								href="#"
-								className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#123f57]"
+							<Link
+								href="/user/settings"
+								className="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#123f57]"
 								role="menuitem">
-								Settings
-							</a>
+								<SettingOutlined /> Settings
+							</Link>
 						</li>
 						<li>
-							<a
-								href="#"
-								className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#123f57]"
+							<Link
+								href="/user/support-ticket"
+								className="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#123f57]"
 								role="menuitem">
-								Earnings
-							</a>
+								<PaperClipOutlined /> Support Tickets
+							</Link>
 						</li>
 						<li>
-							<a
-								href="#"
-								className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#123f57]"
+							<button
+								className="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#123f57]"
 								role="menuitem">
+								<LogoutOutlined />
 								Sign out
-							</a>
+							</button>
 						</li>
 					</ul>
 				</div>

@@ -1,4 +1,6 @@
 import { useProviderContext } from '@/components/Context';
+import Image from 'next/image';
+import Link from 'next/link';
 import HamburgerToggler from './HamburgerToggler';
 import Notification from './Notification';
 import Profile from './Profile';
@@ -14,18 +16,20 @@ const Header = (props: any) => {
 						? 'w-96 visible opacity-100'
 						: 'w-0 invisible opacity-0'
 				}`}>
-				<a
-					href="#"
+				<Link
+					href="/dashboard"
 					className="h-full w-full flex items-center justify-center bg-teal-100 dark:bg-transparent">
-					<img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAHXPluq6GtTRPDIHRv5kJPy86uFjp5sO7hg&s"
-						className="h-10 mr-3"
+					<Image
+						src="/image.png"
+						height="50"
+						width="50"
+						className="h-10 w-auto mr-3"
 						alt="Logo"
 					/>
 					<span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
 						Logo Here
 					</span>
-				</a>
+				</Link>
 			</div>
 			<div className="grow h-full flex justify-between px-5 gap-2">
 				<HamburgerToggler />

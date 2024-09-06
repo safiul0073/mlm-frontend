@@ -1,6 +1,8 @@
 'use client';
 
 import { CopyOutlined, GiftOutlined, WarningFilled } from '@ant-design/icons';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const people = [
 	{
@@ -67,32 +69,32 @@ const Dashboard = () => {
 					</span>
 				</div>
 				<div className="flex items-center gap-2.5 ml-auto">
-					<a
-						href="#"
-						className="bg-gradient-to-r from-[#e52e71] to-[#ff8a00] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5">
+					<button className="bg-gradient-to-r from-[#e52e71] to-[#ff8a00] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5">
 						Deposit
-					</a>
-					<a
-						href="#"
-						className="bg-[#e52e71] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5">
+					</button>
+					<button className="bg-[#e52e71] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5">
 						Invest Now
-					</a>
+					</button>
 				</div>
 			</div>
 			<div className="flex items-center gap-6">
 				<div className="flex relative">
 					<div className="w-52 aspect-square shrink-0 rounded-full bg-[#003049] border-4 border-solid border-[#ffc300] overflow-hidden">
-						<img
-							src="https://static.vecteezy.com/system/resources/thumbnails/027/951/137/small_2x/stylish-spectacles-guy-3d-avatar-character-illustrations-png.png"
+						<Image
+							src="/aa.png"
+							height="500"
+							width="500"
 							className="w-full h-full object-fit"
-							alt="Image"
+							alt="Jese image"
 						/>
 					</div>
 					<span className="absolute top-1 right-1 bg-[#5364f1] h-14 aspect-square rounded-full inline-flex items-center justify-center border-4 border-solid border-[#ffc300]">
-						<img
-							src="https://hyiprio.tdevs.co/assets/global/images/sCQgIyl0OKzFiO73nmWF.svg"
-							alt=""
+						<Image
+							src="/badge.svg"
+							height="50"
+							width="50"
 							className="w-7"
+							alt="badge"
 						/>
 					</span>
 				</div>
@@ -143,7 +145,7 @@ const Dashboard = () => {
 							<div className="inline-block min-w-full py-2 align-middle">
 								<table className="min-w-full border border-gray-200 dark:border-[#535a94]/80 divide-y divide-gray-200 dark:divide-[#535a94]/80">
 									<thead>
-										<tr className='bg-slate-100 dark:bg-[#003049]'>
+										<tr className="bg-slate-100 dark:bg-[#003049]">
 											<th
 												scope="col"
 												className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold dark dark:text-white">
@@ -181,12 +183,12 @@ const Dashboard = () => {
 												<td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm">
 													<div className="flex items-center">
 														<div className="h-10 aspect-square flex-shrink-0">
-															<img
-																alt=""
-																src={
-																	person.image
-																}
+															<Image
+																src="/aa.png"
+																height="500"
+																width="500"
 																className="h-full w-full object-cover rounded-full"
+																alt="Jese image"
 															/>
 														</div>
 														<div className="ml-4">
@@ -216,14 +218,14 @@ const Dashboard = () => {
 													{person.role}
 												</td>
 												<td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium">
-													<a
+													<Link
 														href="#"
-														className="text-indigo-600 hover:text-indigo-900">
+														className="text-indigo-600 hover:text-indigo-900 dark:hover:text-indigo-400">
 														Edit
 														<span className="sr-only">
 															, {person.name}
 														</span>
-													</a>
+													</Link>
 												</td>
 											</tr>
 										))}

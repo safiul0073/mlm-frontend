@@ -4,6 +4,8 @@ import {
 	CloudDownloadOutlined,
 	EyeFilled,
 } from '@ant-design/icons';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 
@@ -36,13 +38,15 @@ const Notification = () => {
 					</div>
 					<div className="divide-y divide-slate-200 dark:divide-slate-600">
 						{[...Array(4)].map((i: any) => (
-							<a
-								href="#"
+							<Link
+								href="/user/notifications/1234"
 								className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-[#123f57]">
 								<div className="flex-shrink-0">
-									<img
+									<Image
+										src="/aa.png"
+										height="50"
+										width="50"
 										className="rounded-full w-10 h-10"
-										src="https://flowbite-admin-dashboard.vercel.app/images/users/bonnie-green.png"
 										alt="Jese image"
 									/>
 									<div
@@ -64,17 +68,17 @@ const Notification = () => {
 										a few moments ago
 									</div>
 								</div>
-							</a>
+							</Link>
 						))}
 					</div>
-					<a
-						href="#"
+					<Link
+						href="/user/notifications"
 						className="flex justify-center py-2.5 text-base font-normal text-center text-slate-700 bg-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 dark:text-white dark:hover:underline">
 						<div className="inline-flex items-center gap-2">
 							<EyeFilled className="text-xl" />
 							View all
 						</div>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</OutsideClickHandler>
