@@ -2,6 +2,7 @@
 import Header from '@/components/admin/Header';
 import Sidebar from '@/components/admin/Sidebar';
 import { useProviderContext } from '@/components/Context';
+import { WarningFilled } from '@ant-design/icons';
 
 export default function RootLayout({
 	children,
@@ -19,7 +20,27 @@ export default function RootLayout({
 					className={`mt-[4.5rem] relative w-full h-full overflow-y-auto flex flex-col grow transition-all ease-in-out duration-300 ${
 						isHamburgerOpen ? 'pl-0 lg:pl-96' : ''
 					}`}>
-					<main className="p-8 grow text-slate-900 dark:text-white">
+					<main className="p-8 grow flex flex-col gap-6 text-slate-900 dark:text-white">
+						<div className="flex items-center gap-2 bg-[#ffc300]/10 dark:bg-[#003049]/80 rounded border border-gray-200 dark:border-[#535a94]/80 p-6">
+							<div className="flex items-center gap-2.5 text-base leading-tight">
+								<div className="bg-[#ffc300] text-white h-10 aspect-square shrink-0 rounded-full inline-flex items-center justify-center">
+									<WarningFilled className="text-lg" />
+								</div>
+								<span>
+									You need to submit your
+									<b>KYC and Other Documents</b> before
+									proceed to the system.
+								</span>
+							</div>
+							<div className="flex items-center gap-2.5 ml-auto">
+								<button className="bg-gradient-to-r from-[#e52e71] to-[#ff8a00] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5">
+									Deposit
+								</button>
+								<button className="bg-[#e52e71] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5">
+									Invest Now
+								</button>
+							</div>
+						</div>
 						{children}
 					</main>
 				</div>
