@@ -20,7 +20,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				suppressHydrationWarning={true}
-				className={`${sofia_sans.variable} bg-gray-50 dark:bg-[#032836] h-full min-h-screen flex flex-col font-sofia`}>
+				className={`${sofia_sans.variable} bg-gray-100 dark:bg-[#032836] h-full min-h-screen flex flex-col font-sofia`}>
 				<AntdRegistry>
 					<Providers>{children}</Providers>
 				</AntdRegistry>
