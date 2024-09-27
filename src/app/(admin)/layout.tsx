@@ -3,6 +3,7 @@ import Header from '@/components/admin/Header';
 import Sidebar from '@/components/admin/Sidebar';
 import { useProviderContext } from '@/components/Context';
 import { WarningFilled } from '@ant-design/icons';
+import Link from 'next/link';
 
 export default function RootLayout({
 	children,
@@ -33,12 +34,16 @@ export default function RootLayout({
 								</span>
 							</div>
 							<div className="flex flex-wrap sm:flex-nowrap justify-center items-center gap-2.5 ml-auto mr-auto sm:mr-0">
-								<button className="bg-gradient-to-r from-[#e52e71] to-[#ff8a00] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5 whitespace-nowrap">
+								<Link
+									href="/deposit"
+									className="bg-gradient-to-r from-[#e52e71] to-[#ff8a00] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5 whitespace-nowrap">
 									Deposit
-								</button>
-								<button className="bg-[#e52e71] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5 whitespace-nowrap">
+								</Link>
+								<Link
+									href="/schema/all"
+									className="bg-[#e52e71] inline-flex items-center justify-center h-10 rounded-full text-white text-base font-medium px-5 whitespace-nowrap">
 									Invest Now
-								</button>
+								</Link>
 							</div>
 						</div>
 						{children}

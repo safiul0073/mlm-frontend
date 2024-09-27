@@ -45,7 +45,7 @@ const Sidebar = (props: any) => {
 		},
 		{
 			name: 'Package Purchase',
-			slug: '/schemas/log',
+			slug: '/schema/log',
 			icon: <ProfileOutlined />,
 		},
 		{
@@ -77,7 +77,7 @@ const Sidebar = (props: any) => {
 				},
 				{
 					name: 'Total Withdraw',
-					slug: '/withdraw',
+					slug: '/withdraw/log',
 				},
 			],
 		},
@@ -88,7 +88,7 @@ const Sidebar = (props: any) => {
 		},
 		{
 			name: 'Business Plan',
-			slug: '/schemas',
+			slug: '/schema/all',
 			icon: <StarOutlined />,
 		},
 		{
@@ -103,7 +103,6 @@ const Sidebar = (props: any) => {
 		},
 		{
 			name: 'Bonus',
-			slug: '/bonus',
 			icon: <DollarOutlined />,
 			children: [
 				{
@@ -157,7 +156,7 @@ const Sidebar = (props: any) => {
 		},
 		{
 			name: 'Plan',
-			slug: '/schemas',
+			slug: '/schema/all',
 			icon: <StarOutlined />,
 		},
 		{
@@ -212,14 +211,16 @@ const Sidebar = (props: any) => {
 							</div>
 						</div>
 						<div className="grid grid-cols-2 gap-2">
-							<button className="bg-[#5364f1] hover:bg-[#e52e71] inline-flex items-center gap-2 justify-center h-11 rounded text-white text-base font-medium">
+							<Link
+								href="/deposit"
+								className="bg-[#5364f1] hover:bg-[#e52e71] inline-flex items-center gap-2 justify-center h-11 rounded text-white text-base font-medium">
 								<FileAddOutlined className="text-base" />
 								Deposit
-							</button>
-							<button className="bg-[#2a9d8f] hover:bg-[#e52e71] inline-flex items-center gap-2 justify-center h-11 rounded text-white text-base font-medium">
+							</Link>
+							<Link href="/schema/all" className="bg-[#2a9d8f] hover:bg-[#e52e71] inline-flex items-center gap-2 justify-center h-11 rounded text-white text-base font-medium">
 								<FileDoneOutlined className="text-base" />
 								Invest Now
-							</button>
+							</Link>
 						</div>
 					</div>
 
@@ -229,7 +230,7 @@ const Sidebar = (props: any) => {
 								{nav.slug && !nav.children && (
 									<Link
 										href={nav?.slug}
-										key={nav?.slug}
+										key={index}
 										className={`px-6 py-2 bg-transparent rounded-xl text-slate-600 dark:text-slate-100 border border-solid ${
 											pathName.endsWith(nav?.slug)
 												? 'border-[#535a94]'
@@ -254,8 +255,11 @@ const Sidebar = (props: any) => {
 												label: (
 													<div
 														className={`w-full px-6 py-2 bg-transparent rounded-xl text-slate-600 dark:text-slate-100 border border-solid ${
-															pathName.endsWith(
-																nav?.slug
+															nav?.children.find(
+																(child) =>
+																	pathName.endsWith(
+																		child?.slug
+																	)
 															)
 																? 'border-[#535a94]'
 																: ' border-transparent hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
@@ -272,10 +276,10 @@ const Sidebar = (props: any) => {
 												showArrow: false,
 												headerClass: '!p-0',
 												children: nav.children.map(
-													(child) => (
+													(child, index) => (
 														<Link
 															href={child?.slug}
-															key={nav?.slug}
+															key={index}
 															className={`w-full px-6 py-2 min-h-10 bg-transparent rounded-xl text-slate-600 dark:text-slate-100 border border-solid ${
 																pathName.endsWith(
 																	child?.slug
@@ -299,10 +303,10 @@ const Sidebar = (props: any) => {
 				</div>
 			</aside>
 			<div className="fixed inset-x-0 bottom-0 z-20 bg-[#c3efe9] dark:bg-[#003049] border-t border-gray-200 dark:border-[#535a94]/80 rounded-t-lg grid grid-cols-5 sm:hidden">
-				{miniNavList?.map((nav) => (
+				{miniNavList?.map((nav, index) => (
 					<Link
 						href={nav?.slug}
-						key={nav?.slug}
+						key={index}
 						className={`grow shrink-0 px-3 py-2 min-h-20 bg-transparent ${
 							pathName.endsWith(nav?.slug)
 								? 'text-black dark:text-white'
