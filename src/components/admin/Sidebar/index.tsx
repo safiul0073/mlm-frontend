@@ -1,27 +1,28 @@
 import { useProviderContext } from '@/components/Context';
 import {
 	BellOutlined,
-	CodeOutlined,
+	CaretDownOutlined,
+	CommentOutlined,
 	CreditCardOutlined,
 	DashboardOutlined,
+	DollarOutlined,
 	FileAddOutlined,
 	FileDoneOutlined,
-	FileExclamationOutlined,
+	FileTextOutlined,
 	MoneyCollectFilled,
-	PaperClipOutlined,
+	MoneyCollectOutlined,
 	ProfileOutlined,
-	ReconciliationOutlined,
-	RightSquareOutlined,
 	SettingOutlined,
 	StarOutlined,
 	TeamOutlined,
-	TransactionOutlined,
-	UsergroupAddOutlined,
+	UserAddOutlined,
 	WalletFilled,
 	WalletOutlined,
 } from '@ant-design/icons';
+import { Collapse } from 'antd';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 const Sidebar = (props: any) => {
 	const { isHamburgerOpen, setIsHamburgerOpen } = useProviderContext();
 	const pathName = usePathname();
@@ -34,95 +35,157 @@ const Sidebar = (props: any) => {
 		},
 		{
 			name: 'My Team',
-			slug: '/team',
+			slug: '/user/tree',
 			icon: <TeamOutlined />,
 		},
 		{
-			name: 'All Schema',
-			slug: '/user/schemas',
+			name: 'My Rewards',
+			slug: '/rewards',
+			icon: <MoneyCollectOutlined />,
+		},
+		{
+			name: 'Package Purchase',
+			slug: '/schemas/log',
 			icon: <ProfileOutlined />,
 		},
 		{
-			name: 'Schema Logs',
-			slug: '/user/invest-logs',
-			icon: <CodeOutlined />,
+			name: 'Referral',
+			slug: '/referral',
+			icon: <UserAddOutlined />,
 		},
 		{
-			name: 'All Transactions',
-			slug: '/user/transactions',
-			icon: <TransactionOutlined />,
-		},
-		{
-			name: 'Add Money',
-			slug: '/user/deposit/new',
-			icon: <FileAddOutlined />,
-		},
-		{
-			name: 'Add Money Log',
-			slug: '/user/deposit/log',
-			icon: <FileExclamationOutlined />,
-		},
-		{
-			name: 'Wallet Exchange',
-			slug: '/user/wallet-exchange',
+			name: 'Balance Transfer',
 			icon: <WalletOutlined />,
-		},
-		{
-			name: 'Send Money',
-			slug: '/user/send-money/new',
-			icon: <FileDoneOutlined />,
-		},
-		{
-			name: 'Send Money Log',
-			slug: '/user/send-money/log',
-			icon: <RightSquareOutlined />,
+			children: [
+				{
+					name: 'New Transfer',
+					slug: '/wallet/exchange',
+				},
+				{
+					name: 'Total Transfer',
+					slug: '/wallet/log',
+				},
+			],
 		},
 		{
 			name: 'Withdraw',
-			slug: '/user/withdraw/new',
 			icon: <CreditCardOutlined />,
+			children: [
+				{
+					name: 'Make Withdraw',
+					slug: '/withdraw/new',
+				},
+				{
+					name: 'Total Withdraw',
+					slug: '/withdraw',
+				},
+			],
 		},
 		{
-			name: 'Withdraw Log',
-			slug: '/user/withdraw/log',
-			icon: <ReconciliationOutlined />,
+			name: 'Transactions',
+			slug: '/transaction',
+			icon: <FileTextOutlined />,
 		},
 		{
-			name: 'Ranking Badge',
-			slug: '/user/ranking-badge',
+			name: 'Business Plan',
+			slug: '/schemas',
 			icon: <StarOutlined />,
 		},
 		{
-			name: 'Referral',
-			slug: '/user/referral',
-			icon: <UsergroupAddOutlined />,
+			name: 'My Wallet',
+			slug: '/wallet/all',
+			icon: <WalletOutlined />,
 		},
 		{
-			name: 'Settings',
-			slug: '/user/settings',
-			icon: <SettingOutlined />,
+			name: 'Total Profit Interest',
+			slug: '/profit/interest',
+			icon: <FileDoneOutlined />,
+		},
+		{
+			name: 'Bonus',
+			slug: '/bonus',
+			icon: <DollarOutlined />,
+			children: [
+				{
+					name: 'Reward Bonus',
+					slug: '/bonus/reward',
+				},
+				{
+					name: 'Total Generation Bonus',
+					slug: '/bonus/generation',
+				},
+				{
+					name: 'Total Referral Bonus',
+					slug: '/bonus/referral',
+				},
+				{
+					name: 'Total Incentive Bonus',
+					slug: '/bonus/incentive',
+				},
+				{
+					name: 'Deposit Bonus',
+					slug: '/bonus/deposit',
+				},
+				{
+					name: 'Investment Bonus',
+					slug: '/bonus/investment',
+				},
+			],
 		},
 		{
 			name: 'Support Ticket',
-			slug: '/user/support-ticket',
-			icon: <PaperClipOutlined />,
+			slug: '/support-ticket',
+			icon: <CommentOutlined />,
 		},
 		{
 			name: 'Notifications',
-			slug: '/user/notifications',
+			slug: '/notifications',
 			icon: <BellOutlined />,
+		},
+		{
+			name: 'Settings',
+			slug: '/settings',
+			icon: <SettingOutlined />,
+		},
+	];
+
+	const miniNavList = [
+		{
+			name: 'Home',
+			slug: '/dashboard',
+			icon: <DashboardOutlined />,
+		},
+		{
+			name: 'Plan',
+			slug: '/schemas',
+			icon: <StarOutlined />,
+		},
+		{
+			name: 'Wallet',
+			slug: '/wallet/all',
+			icon: <WalletOutlined />,
+		},
+		{
+			name: 'Support',
+			slug: '/support-ticket',
+			icon: <CommentOutlined />,
+		},
+		{
+			name: 'Settings',
+			slug: '/settings',
+			icon: <SettingOutlined />,
 		},
 	];
 
 	return (
 		<>
 			<aside
-				className={`fixed top-[4.5rem] left-0 bottom-0 z-20 flex flex-col flex-shrink-0 font-normal transition-all ease-in-out duration-300 ${
+				className={`fixed top-[4.5rem] left-0 bottom-0 z-20 hidden sm:flex flex-col flex-shrink-0 font-normal transition-all ease-in-out duration-300 ${
 					isHamburgerOpen
 						? 'w-96 visible opacity-100'
 						: 'w-0 invisible opacity-0'
 				}`}>
-				<div className="relative flex flex-col flex-1 min-h-0 pt-0 bg-teal-100 dark:bg-[#003049] overflow-y-auto border-r border-gray-200 dark:border-[#535a94]/80 divide-y divide-gray-200 dark:divide-[#535a94]/80">
+				<div className="relative flex flex-col flex-1 min-h-0 pt-0 bg-[#c3efe9] dark:bg-[#003049] overflow-y-auto border-r border-gray-200 dark:border-[#535a94]/80 divide-y divide-gray-200 dark:divide-[#535a94]/80">
 					<div className="p-5 text-white flex flex-col gap-2">
 						<div className="bg-gradient-to-r from-[#e52e71] to-[#ff8a00] p-4 rounded relative overflow-hidden flex flex-col gap-4">
 							<div className="absolute top-2.5 right-2.5 inline-flex bg-white text-xs text-slate-900 px-2 py-1 rounded font-semibold leading-tight uppercase">
@@ -159,23 +222,97 @@ const Sidebar = (props: any) => {
 							</button>
 						</div>
 					</div>
+
 					<nav className="grow h-auto p-7 flex flex-col gap-2">
-						{navList?.map((nav) => (
-							<Link
-								href={nav?.slug}
-								key={nav?.slug}
-								className={`px-6 py-2 bg-transparent rounded-full text-slate-600 dark:text-slate-100 ${
-									pathName.endsWith(nav?.slug)
-										? '!bg-[#535a94] !text-white'
-										: 'hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
-								} inline-flex items-center gap-2 uppercase leading-none`}>
-								<span className="text-lg">{nav?.icon}</span>
-								<span>{nav?.name}</span>
-							</Link>
+						{navList?.map((nav, index) => (
+							<>
+								{nav.slug && !nav.children && (
+									<Link
+										href={nav?.slug}
+										key={nav?.slug}
+										className={`px-6 py-2 bg-transparent rounded-xl text-slate-600 dark:text-slate-100 border border-solid ${
+											pathName.endsWith(nav?.slug)
+												? 'border-[#535a94]'
+												: ' border-transparent hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+										} inline-flex items-center gap-2 uppercase leading-none`}>
+										<span className="text-lg">
+											{nav?.icon}
+										</span>
+										<span>{nav?.name}</span>
+									</Link>
+								)}
+
+								{nav.children && (
+									<Collapse
+										accordion
+										className="!border-none !bg-transparent"
+										items={[
+											{
+												key: index,
+												className:
+													'flex flex-col rounded-full',
+												label: (
+													<div
+														className={`w-full px-6 py-2 bg-transparent rounded-xl text-slate-600 dark:text-slate-100 border border-solid ${
+															pathName.endsWith(
+																nav?.slug
+															)
+																? 'border-[#535a94]'
+																: ' border-transparent hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+														} inline-flex items-center gap-2 uppercase leading-none`}>
+														<span className="text-lg">
+															{nav?.icon}
+														</span>
+														<span>{nav?.name}</span>
+														<span className="text-lg ml-auto">
+															<CaretDownOutlined />
+														</span>
+													</div>
+												),
+												showArrow: false,
+												headerClass: '!p-0',
+												children: nav.children.map(
+													(child) => (
+														<Link
+															href={child?.slug}
+															key={nav?.slug}
+															className={`w-full px-6 py-2 min-h-10 bg-transparent rounded-xl text-slate-600 dark:text-slate-100 border border-solid ${
+																pathName.endsWith(
+																	child?.slug
+																)
+																	? 'border-[#535a94]'
+																	: ' border-transparent hover:bg-gray-900/5 dark:hover:bg-[#123f57]'
+															} inline-flex items-center gap-2 uppercase leading-none hover:!text-slate-600 dark:hover:!text-slate-100`}>
+															<span>
+																{child?.name}
+															</span>
+														</Link>
+													)
+												),
+											},
+										]}
+									/>
+								)}
+							</>
 						))}
 					</nav>
 				</div>
 			</aside>
+			<div className="fixed inset-x-0 bottom-0 z-20 bg-[#c3efe9] dark:bg-[#003049] border-t border-gray-200 dark:border-[#535a94]/80 rounded-t-lg grid grid-cols-5 sm:hidden">
+				{miniNavList?.map((nav) => (
+					<Link
+						href={nav?.slug}
+						key={nav?.slug}
+						className={`grow shrink-0 px-3 py-2 min-h-20 bg-transparent ${
+							pathName.endsWith(nav?.slug)
+								? 'text-black dark:text-white'
+								: 'text-slate-600 dark:text-slate-500'
+						} inline-flex flex-col justify-center items-center text-center gap-2 uppercase leading-none`}>
+						<span className="text-2xl">{nav?.icon}</span>
+						<span className="text-xs">{nav?.name}</span>
+					</Link>
+				))}
+			</div>
 		</>
 	);
 };

@@ -5,7 +5,7 @@ const HamburgerToggler = (props: any) => {
 	return (
 		<button
 			onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
-			className="p-2 text-[#e52e71] dark:text-white rounded cursor-pointer">
+			className="hidden sm:block p-2 text-[#e52e71] dark:text-white rounded cursor-pointer">
 			{isHamburgerOpen ? (
 				<MenuFoldOutlined className="text-3xl" />
 			) : (

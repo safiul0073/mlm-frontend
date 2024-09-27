@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ant-collapse-content {
+	background-color: transparent !important;
+	border: none !important;
+	.ant-collapse-content-box {
+		display: flex;
+		flex-direction: column;
+        gap: 4px;
+		position: relative;
+        padding: 12px 0px 12px 12px;
+        background-color: transparent!important;
+		&:before {
+			content: '';
+			width: 2px;
+            position: absolute;
+			top: 16px;
+			bottom: 16px;
+			left: 0;
+			background-color: #535a94;
+		}
+	}
+}

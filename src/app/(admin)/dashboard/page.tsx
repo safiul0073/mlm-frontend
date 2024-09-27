@@ -2,62 +2,23 @@
 
 import { CopyOutlined, GiftOutlined } from '@ant-design/icons';
 import Image from 'next/image';
-import Link from 'next/link';
 
-const people = [
+const transactionLog = [
 	{
-		name: 'Lindsay Walton',
-		title: 'Front-end Developer',
-		department: 'Optimization',
-		email: 'lindsay.walton@example.com',
-		role: 'Member',
-		image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Lindsay Walton',
-		title: 'Front-end Developer',
-		department: 'Optimization',
-		email: 'lindsay.walton@example.com',
-		role: 'Member',
-		image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Lindsay Walton',
-		title: 'Front-end Developer',
-		department: 'Optimization',
-		email: 'lindsay.walton@example.com',
-		role: 'Member',
-		image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Lindsay Walton',
-		title: 'Front-end Developer',
-		department: 'Optimization',
-		email: 'lindsay.walton@example.com',
-		role: 'Member',
-		image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Lindsay Walton',
-		title: 'Front-end Developer',
-		department: 'Optimization',
-		email: 'lindsay.walton@example.com',
-		role: 'Member',
-		image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Lindsay Walton',
-		title: 'Front-end Developer',
-		department: 'Optimization',
-		email: 'lindsay.walton@example.com',
-		role: 'Member',
-		image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+		title: 'Deposit With Stripe',
+		time: 'Sep 08 2024 03:18',
+		id: 'TRXB4GJAQ2RBS',
+		type: 'Deposit',
+		amount: '20 USD',
+		charge: '0.6 USD',
+		status: 'Pending',
+		gateway: 'Stripe-usd',
 	},
 ];
 const Dashboard = () => {
 	return (
 		<>
-			<div className="flex items-center gap-6">
+			<div className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-start items-center gap-6">
 				<div className="flex relative">
 					<div className="w-52 aspect-square shrink-0 rounded-full bg-[#003049] border-4 border-solid border-[#ffc300] overflow-hidden">
 						<Image
@@ -78,15 +39,17 @@ const Dashboard = () => {
 						/>
 					</span>
 				</div>
-				<div className="flex flex-col grow shadow-lg rounded">
+				<div className="w-full flex flex-col grow shadow-lg rounded">
 					<div className="px-6 h-14 rounded-t border-t border-x border-gray-200 dark:border-[#535a94]/80 text-lg text-medium bg-white dark:bg-transparent flex items-center gap-2">
 						Referral URL
 					</div>
 					<div className="flex flex-col p-6 gap-2 rounded-b border border-gray-200 dark:border-[#535a94]/80 bg-white dark:bg-transparent">
 						<div className="flex items-center">
-							<div className="w-auto grow border-y-2 border-l-2 border-gray-200 dark:border-[#535a94]/80 h-12 inline-flex items-center px-4 rounded-l">
-								https://hyiprio.tdevs.co/register?invite=jLcoFooc3K
-							</div>
+							<input
+								className="w-full min-w-auto grow border-y-2 border-l-2 border-gray-200 dark:border-[#535a94]/80 h-12 inline-flex items-center px-4 rounded-l"
+								value="https://hyiprio.tdevs.co/register?invite=jLcoFooc3K"
+								disabled
+							/>
 							<button className="bg-[#e52e71] inline-flex items-center justify-center h-12 rounded-r text-white text-base font-medium px-5 gap-2">
 								<CopyOutlined />
 								Copy
@@ -131,12 +94,27 @@ const Dashboard = () => {
 											<th
 												scope="col"
 												className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold dark dark:text-white">
-												Name
+												Description
 											</th>
 											<th
 												scope="col"
 												className="px-3 py-3.5 text-left text-sm font-semibold dark dark:text-white">
-												Title
+												Transaction ID
+											</th>
+											<th
+												scope="col"
+												className="px-3 py-3.5 text-left text-sm font-semibold dark dark:text-white">
+												Type
+											</th>
+											<th
+												scope="col"
+												className="px-3 py-3.5 text-left text-sm font-semibold dark dark:text-white">
+												Amount
+											</th>
+											<th
+												scope="col"
+												className="px-3 py-3.5 text-left text-sm font-semibold dark dark:text-white">
+												Charge
 											</th>
 											<th
 												scope="col"
@@ -146,25 +124,18 @@ const Dashboard = () => {
 											<th
 												scope="col"
 												className="px-3 py-3.5 text-left text-sm font-semibold dark dark:text-white">
-												Role
-											</th>
-											<th
-												scope="col"
-												className="relative py-3.5 pl-3 pr-4">
-												<span className="sr-only">
-													Edit
-												</span>
+												Gateway
 											</th>
 										</tr>
 									</thead>
 									<tbody className="divide-y divide-gray-200 dark:divide-[#535a94]/80">
-										{people.map((person) => (
+										{transactionLog.map((transaction) => (
 											<tr
-												key={person.email}
+												key={transaction.id}
 												className="odd:bg-white even:bg-slate-100 dark:odd:bg-transparent dark:even:bg-[#003049]">
 												<td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm">
 													<div className="flex items-center">
-														<div className="h-10 aspect-square flex-shrink-0">
+														<div className="h-6 aspect-square flex-shrink-0">
 															<Image
 																src="/aa.png"
 																height="500"
@@ -173,41 +144,43 @@ const Dashboard = () => {
 																alt="Jese image"
 															/>
 														</div>
-														<div className="ml-4">
+														<div className="ml-2">
 															<div className="font-medium text-slate-900 dark:text-white">
-																{person.name}
+																{
+																	transaction.title
+																}
 															</div>
 															<div className="mt-1 text-gray-500 dark:text-slate-400">
-																{person.email}
+																{
+																	transaction.time
+																}
 															</div>
 														</div>
 													</div>
 												</td>
 												<td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500 dark:text-slate-400">
 													<div className="text-slate-900 dark:text-white">
-														{person.title}
+														{transaction.id}
 													</div>
+												</td>
+												<td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500 dark:text-slate-400">
 													<div className="mt-1 text-gray-500 dark:text-slate-400">
-														{person.department}
+														{transaction.type}
 													</div>
 												</td>
 												<td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500 dark:text-slate-400">
 													<span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-														Active
+														{transaction.amount}
 													</span>
 												</td>
 												<td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500 dark:text-slate-400">
-													{person.role}
+													{transaction.charge}
 												</td>
-												<td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium">
-													<Link
-														href="#"
-														className="text-indigo-600 hover:text-indigo-900 dark:hover:text-indigo-400">
-														Edit
-														<span className="sr-only">
-															, {person.name}
-														</span>
-													</Link>
+												<td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500 dark:text-slate-400">
+													{transaction.status}
+												</td>
+												<td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500 dark:text-slate-400">
+													{transaction.gateway}
 												</td>
 											</tr>
 										))}
