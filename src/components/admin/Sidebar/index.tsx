@@ -44,6 +44,11 @@ const Sidebar = (props: any) => {
 			icon: <MoneyCollectOutlined />,
 		},
 		{
+			name: 'Business Plan',
+			slug: '/schema/all',
+			icon: <StarOutlined />,
+		},
+		{
 			name: 'Package Purchase',
 			slug: '/schema/log',
 			icon: <ProfileOutlined />,
@@ -85,11 +90,6 @@ const Sidebar = (props: any) => {
 			name: 'Transactions',
 			slug: '/transaction',
 			icon: <FileTextOutlined />,
-		},
-		{
-			name: 'Business Plan',
-			slug: '/schema/all',
-			icon: <StarOutlined />,
 		},
 		{
 			name: 'My Wallet',
