@@ -8,7 +8,8 @@
 
 # testing
 /coverage
-
+/bun.lockb
+bun.lockb
 # next.js
 /.next/
 /out/
