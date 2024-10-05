@@ -10,6 +10,7 @@
 /coverage
 /bun.lockb
 bun.lockb
+./bun.lockb
 # next.js
 /.next/
 /out/
