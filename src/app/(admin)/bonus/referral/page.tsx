@@ -1,5 +1,5 @@
 const Referral = () => {
-	return <div>Referral Bonus</div>;
+  return <div>Referral Bonus</div>;
 };
 
 export default Referral;

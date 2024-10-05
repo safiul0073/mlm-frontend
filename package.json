@@ -1,37 +1,46 @@
 {
-	"name": "mlm-frontend",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@ant-design/icons": "^5.4.0",
-		"@ant-design/nextjs-registry": "^1.0.1",
-		"@tanstack/react-query": "^5.55.0",
-		"antd": "^5.20.5",
-		"next": "14.2.5",
-		"react": "18.3.1",
-		"react-dom": "18.3.1"
-	},
-	"devDependencies": {
-		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tailwindcss/forms": "^0.5.7",
-		"@tailwindcss/line-clamp": "^0.4.4",
-		"@tailwindcss/typography": "^0.5.14",
-		"@types/node": "22.4.0",
-		"@types/react": "18.3.3",
-		"@types/react-dom": "18.3.0",
-		"@types/react-outside-click-handler": "^1.3.3",
-		"autoprefixer": "10.4.20",
-		"next-themes": "^0.3.0",
-		"postcss": "8.4.41",
-		"react-outside-click-handler": "^1.3.0",
-		"sass": "^1.77.8",
-		"tailwindcss": "3.4.10",
-		"typescript": "5.5.4"
-	}
+  "name": "mlm-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\"",
+    "check": "prettier --check \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\"",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.4.0",
+    "@ant-design/nextjs-registry": "^1.0.1",
+    "@tanstack/react-query": "^5.55.0",
+    "@types/js-cookie": "^3.0.6",
+    "antd": "^5.20.5",
+    "axios": "^1.7.7",
+    "js-cookie": "^3.0.5",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-hot-toast": "^2.4.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.14",
+    "@types/node": "22.4.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@types/react-outside-click-handler": "^1.3.3",
+    "autoprefixer": "10.4.20",
+    "husky": "^9.1.6",
+    "next-themes": "^0.3.0",
+    "postcss": "8.4.41",
+    "prettier": "^3.3.3",
+    "react-outside-click-handler": "^1.3.0",
+    "sass": "^1.77.8",
+    "tailwindcss": "3.4.10",
+    "typescript": "5.5.4"
+  }
 }

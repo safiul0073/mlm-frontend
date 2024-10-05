@@ -1,5 +1,5 @@
 const WithdrawLog = () => {
-	return <div>WithdrawLog</div>;
+  return <div>WithdrawLog</div>;
 };
 
 export default WithdrawLog;

@@ -1,5 +1,5 @@
 const UserTree = () => {
-	return <div>My Team</div>;
+  return <div>My Team</div>;
 };
 
 export default UserTree;
