@@ -77,7 +77,7 @@ export const AuthStoreProvider = ({ children }: AuthProviderProps) => {
       }
     } else {
     }
-  }, [getUser, isAuthenticated, token]);
+  }, [isAuthenticated, token]);
 
   return (
     <AuthStoreContext.Provider
