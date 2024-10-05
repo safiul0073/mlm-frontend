@@ -1,3 +1,6 @@
+'use client';
+
+import { CopyOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -55,11 +58,26 @@ const people = [
 const Referral = () => {
 	return (
 		<>
-			<div className="flex flex-col grow shadow-lg rounded">
+			<div className="w-full flex flex-col grow shadow-lg rounded">
 				<div className="px-6 h-14 rounded-t border-t border-x border-gray-200 dark:border-[#535a94]/80 text-lg text-medium bg-white dark:bg-transparent flex items-center gap-2">
-					Referral URL and Tree
+					Referral URL
 				</div>
-				<div className="flex flex-col p-6 gap-2 rounded-b border border-gray-200 dark:border-[#535a94]/80 bg-white dark:bg-transparent"></div>
+				<div className="flex flex-col p-6 gap-2 rounded-b border border-gray-200 dark:border-[#535a94]/80 bg-white dark:bg-transparent">
+					<div className="flex items-center">
+						<input
+							className="w-full min-w-auto grow border-y-2 border-l-2 border-gray-200 dark:border-[#535a94]/80 h-12 inline-flex items-center px-4 rounded-l"
+							value="https://hyiprio.tdevs.co/register?invite=jLcoFooc3K"
+							disabled
+						/>
+						<button className="bg-[#e52e71] inline-flex items-center justify-center h-12 rounded-r text-white text-base font-medium px-5 gap-2">
+							<CopyOutlined />
+							Copy
+						</button>
+					</div>
+					<span className="text-sm text-gray-400">
+						0 peoples are joined by using this URL
+					</span>
+				</div>
 			</div>
 			<div className="flex flex-col grow shadow-lg rounded">
 				<div className="px-6 h-14 rounded-t border-t border-x border-gray-200 dark:border-[#535a94]/80 text-lg text-medium bg-white dark:bg-transparent flex items-center gap-2">
