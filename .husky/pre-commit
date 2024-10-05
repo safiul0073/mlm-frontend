@@ -1,3 +1,5 @@
 
-echo "bun run format" 
-echo "bun run check"
+bun run format
+bun run check
+bun run lint
+
