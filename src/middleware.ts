@@ -1,17 +1,25 @@
 import { NextResponse, NextRequest } from "next/server";
 
-// This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get(
-    process.env.NEXT_PUBLIC_TOKEN_NAME as string,
-  );
+  try {
+    // Check if the environment variable is set and valid
+    const tokenName = process.env.NEXT_PUBLIC_TOKEN_NAME;
+    if (!tokenName) {
+      throw new Error("Token name not defined in environment variables");
+    }
 
-  if (!token && request.nextUrl.pathname.startsWith("/dashboard")) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    // Safely retrieve the token from cookies
+    const token = request?.cookies?.get(tokenName);
+
+    if (!token && request.nextUrl.pathname.startsWith("/dashboard")) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+
+  } catch (e) {
+    console.log("There's an error in middleware: ", e);
   }
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
   matcher: ["/dashboard/:path*", "/login"],
 };
