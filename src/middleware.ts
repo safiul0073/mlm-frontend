@@ -14,7 +14,6 @@ export function middleware(request: NextRequest) {
     if (!token && request.nextUrl.pathname.startsWith("/dashboard")) {
       return NextResponse.redirect(new URL("/login", request.url));
     }
-
   } catch (e) {
     console.log("There's an error in middleware: ", e);
   }

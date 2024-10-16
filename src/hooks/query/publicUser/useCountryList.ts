@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-export const useCountryList = async () => {
+export const useCountryList = () => {
   return useQuery({
     queryKey: ["country-list"],
     queryFn: async () => {

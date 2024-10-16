@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 interface Props {
   city: string;
 }
-export const useUserTimeline = async ({ city }: Props) => {
+export const useUserTimeline = ({ city }: Props) => {
   return useQuery({
     queryKey: ["user-timeline", city],
     queryFn: async () => {
