@@ -1,12 +1,12 @@
 "use client";
+import { Button } from "@/components/ui/Button";
 import { useQueryMutation } from "@/hooks/mutate/useQueryMutation";
 import { useAuthStore } from "@/providers/AuthStoreProviders";
+import Cookies from "js-cookie";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import Cookies from "js-cookie";
-import { Button } from "@/components/ui/Button";
 
 const Login = () => {
   const { login } = useAuthStore();
@@ -49,7 +49,7 @@ const Login = () => {
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col gap-6 items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <Link
-          href="/dashboard"
+          href="/"
           className="flex items-center justify-center bg-transparent sm:bg-[#c3efe9] sm:dark:bg-transparent"
         >
           <Image
@@ -79,7 +79,10 @@ const Login = () => {
                   id="username"
                   value={credentials.username}
                   onChange={(e) =>
-                    setCredentials({ ...credentials, username: e.target.value })
+                    setCredentials({
+                      ...credentials,
+                      username: e.target.value,
+                    })
                   }
                   className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="jhonDoe"
@@ -95,7 +98,10 @@ const Login = () => {
                   name="password"
                   value={credentials.password}
                   onChange={(e) =>
-                    setCredentials({ ...credentials, password: e.target.value })
+                    setCredentials({
+                      ...credentials,
+                      password: e.target.value,
+                    })
                   }
                   id="password"
                   placeholder="••••••••"

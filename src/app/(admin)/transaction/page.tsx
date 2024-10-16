@@ -1,5 +1,16 @@
+"use client";
+
+import { useTransferHistory } from "@/hooks/query/publicUser/getTransferHistory";
+
 const Transaction = () => {
-  return <div>Transaction</div>;
+  const { data: history, isLoading, refetch } = useTransferHistory();
+
+  return (
+    <div>
+      {console.log(history?.data)}
+      Transaction
+    </div>
+  );
 };
 
 export default Transaction;

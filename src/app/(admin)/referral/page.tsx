@@ -1,5 +1,6 @@
 "use client";
 
+import { useReferralUsers } from "@/hooks/query/publicUser/getRefferalUsers";
 import { CopyOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,8 +63,11 @@ const people = [
 ];
 
 const Referral = () => {
+  const { data: referral, isLoading, refetch } = useReferralUsers();
+
   return (
     <>
+      {console.log(referral?.data)}
       <div className="w-full flex flex-col grow shadow-lg rounded">
         <div className="px-6 h-14 rounded-t border-t border-x border-gray-200 dark:border-[#535a94]/80 text-lg text-medium bg-white dark:bg-transparent flex items-center gap-2">
           Referral URL
