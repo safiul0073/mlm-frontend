@@ -2,7 +2,6 @@ import axios, { AxiosInstance, AxiosStatic } from "axios";
 import Cookies from "js-cookie";
 import { BASE_API_URL } from ".";
 
-
 export const publicInstance = axios.create({
   baseURL: BASE_API_URL,
   headers: {
