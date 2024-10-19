@@ -26,7 +26,10 @@ export default function RootLayout({
       >
         <AntdRegistry>
           <DefaultProviders>
-            <AuthStoreProvider><Header />{children}</AuthStoreProvider>
+            <AuthStoreProvider>
+              <Header />
+              {children}
+            </AuthStoreProvider>
           </DefaultProviders>
         </AntdRegistry>
       </body>
