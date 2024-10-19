@@ -9,7 +9,7 @@ import Activities from "./(admin)/activities";
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       <main className="bg-white grow flex flex-col">
         <Hero />

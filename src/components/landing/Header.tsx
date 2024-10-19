@@ -4,9 +4,43 @@ import { MenuOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from 'next/navigation'
+
+const NavItems = [
+  {
+    url:"/",
+    name: "Home"
+  },
+  {
+    url:"/packages",
+    name: "Packages"
+  },
+  {
+    url:"/news",
+    name: "News"
+  },
+  {
+    url:"/gallery",
+    name: "Gallery"
+  },
+  {
+    url:"/about-us",
+    name: "About Us"
+  },
+  {
+    url:"/faq",
+    name: "FAQ"
+  },
+  {
+    url:"/contact",
+    name: "Contact"
+  },
+]
 
 const Header = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+  const pathname = usePathname()
   return (
     <header className="bg-indigo-800 lg:h-24 flex flex-col justify-center sticky top-0 z-40">
       <div className="container mx-auto px-6">
@@ -24,6 +58,7 @@ const Header = () => {
           <div className="flex flex-1 items-center ml-16 mobile:ml-12 lg:ml-0">
             <Link href="/" className="flex items-center">
               <Image
+                // src="https://sinvestingsolutions.com/storage/uploads/9182200389_1719506002_18224.png"
                 src="/image.png"
                 height="50"
                 width="50"
@@ -36,48 +71,20 @@ const Header = () => {
             </Link>
             <div className="hidden lg:ml-auto lg:flex items-center">
               <div className="flex space-x-4 wide-tablet:space-x-2">
-                <Link
-                  href="/"
-                  className={`${true ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/"
-                  className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}
-                >
-                  Packages
-                </Link>
-                <Link
-                  href="/"
-                  className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}
-                >
-                  News
-                </Link>
-                <Link
-                  href="/"
-                  className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}
-                >
-                  Gallery
-                </Link>
-                <Link
-                  href="/"
-                  className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/"
-                  className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="/"
-                  className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}
-                >
-                  Contact
-                </Link>
+              {
+                  NavItems.map((item,index)=>{
+                    return (
+                      <Link
+                      key={index}
+                      onClick={()=>setClickedIndex(index)}
+                      href={item.url}
+                      className={`${clickedIndex === index || pathname === item.url ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} px-3 py-2 rounded-md text-sm font-medium`}
+                    >
+                      {item.name}
+                    </Link>
+                    )
+                  })
+                }
               </div>
             </div>
           </div>
@@ -96,48 +103,20 @@ const Header = () => {
         className={`lg:hidden ${hamburgerOpen ? "visible opacity-100" : "invisible opacity-0"} bg-indigo-800 absolute top-full w-full transform-bottom transition-transform ease-in-out duration-100 origin-top`}
       >
         <div className="space-y-1 px-8 pt-5 pb-5">
-          <Link
-            href="/"
-            className={`${true ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} block px-3 py-2 rounded-md text-base font-medium`}
-          >
-            Home
-          </Link>
-          <Link
-            href="/"
-            className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} block px-3 py-2 rounded-md text-base font-medium`}
-          >
-            Packages
-          </Link>
-          <Link
-            href="/"
-            className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} block px-3 py-2 rounded-md text-base font-medium`}
-          >
-            News
-          </Link>
-          <Link
-            href="/"
-            className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} block px-3 py-2 rounded-md text-base font-medium`}
-          >
-            Gallery
-          </Link>
-          <Link
-            href="/"
-            className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} block px-3 py-2 rounded-md text-base font-medium`}
-          >
-            About Us
-          </Link>
-          <Link
-            href="/"
-            className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} block px-3 py-2 rounded-md text-base font-medium`}
-          >
-            FAQ
-          </Link>
-          <Link
-            href="/"
-            className={`${false ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} block px-3 py-2 rounded-md text-base font-medium`}
-          >
-            Contact
-          </Link>
+          {
+            NavItems.map((item,index)=>{
+              return (
+                <Link
+                key={index}
+                onClick={()=>setHamburgerOpen(!hamburgerOpen)}
+                href={item.url}
+                className={`${true ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-indigo-600 hover:text-white"} block px-3 py-2 rounded-md text-base font-medium`}
+              >
+                {item.name}
+              </Link>
+              )
+            })
+          }
         </div>
       </div>
     </header>
