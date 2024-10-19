@@ -1,16 +1,17 @@
 import axios, { AxiosInstance, AxiosStatic } from "axios";
 import Cookies from "js-cookie";
-const api_url = (process.env.API_URL ?? "http://127.0.0.1:8000/") + "api/v1";
+import { BASE_API_URL } from ".";
+
 
 export const publicInstance = axios.create({
-  baseURL: api_url,
+  baseURL: BASE_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
 });
 
 export const privateInstance: AxiosInstance = axios.create({
-  baseURL: api_url,
+  baseURL: BASE_API_URL,
   headers: {
     Accept: "application/json",
     "Content-Type": "multipart/form-data",
