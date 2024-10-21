@@ -4,15 +4,13 @@ import { useQuery } from "@tanstack/react-query";
 interface Props {
   city: string;
 }
-export const useUserTimeline = ({ city }: Props) => {
+export const useTransferHistory = () => {
   return useQuery({
-    queryKey: ["user-timeline", city],
+    queryKey: ["transferHistory"],
     queryFn: async () => {
-      const response = await privateInstance.get("/user/timeline", {
-        params: {
-          city,
-        },
-      });
+      const response = await privateInstance.get(
+        "/dashboard/user-balance-transfer",
+      );
       return response.data;
     },
   });
