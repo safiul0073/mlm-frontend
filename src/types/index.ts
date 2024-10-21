@@ -60,5 +60,3 @@ export interface PurchaseType {
   };
   package: PackageType;
 }
-
-

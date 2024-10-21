@@ -8,9 +8,7 @@ export const useDashboardData = () => {
   return useQuery({
     queryKey: ["useDashboardData"],
     queryFn: async () => {
-      const response = await privateInstance.get(
-        "/dashboard",
-      );
+      const response = await privateInstance.get("/dashboard");
       return response.data;
     },
   });
