@@ -1,6 +1,4 @@
 import Achievement from "@/components/landing/achievement";
-import Footer from "@/components/landing/Footer";
-import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/hero";
 import Rewards from "@/components/landing/rewards";
 import Trending from "@/components/landing/trending";
@@ -9,11 +7,10 @@ import { getHomePageData } from "@/hooks/server";
 
 export default async function Home() {
   const homePageDAta = await getHomePageData();
-
+  console.log(homePageDAta);
   return (
     <>
       {/* <Header /> */}
-
       <main className="bg-white grow flex flex-col">
         <Hero />
         <Trending />
@@ -21,8 +18,6 @@ export default async function Home() {
         <Achievement />
         <Activities />
       </main>
-
-      <Footer />
     </>
   );
 }

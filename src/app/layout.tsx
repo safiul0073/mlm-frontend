@@ -5,6 +5,7 @@ import { Sofia_Sans } from "next/font/google";
 import DefaultProviders from "../providers/DefaultProviders";
 import { AuthStoreProvider } from "@/providers/AuthStoreProviders";
 import Header from "@/components/landing/Header";
+import Footer from "@/components/landing/Footer";
 
 const sofia_sans = Sofia_Sans({ subsets: ["latin"], variable: "--font-sofia" });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
             <AuthStoreProvider>
               <Header />
               {children}
+              <Footer />
             </AuthStoreProvider>
           </DefaultProviders>
         </AntdRegistry>
