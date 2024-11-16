@@ -1,11 +1,11 @@
 import Link from "next/link";
-import styles from '@/styles/404.module.scss';
+import styles from "@/styles/404.module.scss";
 
 const NotFoundPage = () => {
   return (
     <div className="bg-gray-100 h-screen flex justify-center items-center">
       <div className="text-center">
-        <div className={styles['emoji-404']}>
+        <div className={styles["emoji-404"]}>
           <svg
             enableBackground="new 0 0 226 249.135"
             height="249.135"

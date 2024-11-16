@@ -1,11 +1,11 @@
 import React from "react";
 
 const AboutUs = () => {
-    const aboutUsContent = `We have a modern and amazing marketing plan. 
+  const aboutUsContent = `We have a modern and amazing marketing plan. 
     We have no PV system, and you don’t have to make any personal sales to earn income every month.
-    `
-    const ourStoryContent = `A long journey begins with a single step.
-    `
+    `;
+  const ourStoryContent = `A long journey begins with a single step.
+    `;
   return (
     <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
       {/* About Us Section */}
@@ -17,7 +17,9 @@ const AboutUs = () => {
           <p
             className="font-normal text-base leading-6 text-gray-600 dark:text-white"
             dangerouslySetInnerHTML={{
-              __html: aboutUsContent || `We have a modern and amazing marketing plan. 
+              __html:
+                aboutUsContent ||
+                `We have a modern and amazing marketing plan. 
               We have no PV system, and you don’t have to make any personal sales to earn income every month. 
               Your ID will never be blocked, so you can enjoy royalty income from your sales team. 
               Your family will be safe in this system with death and education funds. 
@@ -40,7 +42,9 @@ const AboutUs = () => {
           <p
             className="font-normal text-base leading-6 text-gray-600 dark:text-white"
             dangerouslySetInnerHTML={{
-              __html: ourStoryContent || `A long journey begins with a single step. 
+              __html:
+                ourStoryContent ||
+                `A long journey begins with a single step. 
               Initially, the story was short. We started working with a proper idea. 
               The road to success is never easy. We believe that hard work and proper planning will take us to the peak of success.`,
             }}

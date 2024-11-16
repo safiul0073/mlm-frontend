@@ -10,7 +10,7 @@ type AccordionProps = {
   faqs: Faq[];
 };
 
-const FaqList: React.FC= () => {
+const FaqList: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
